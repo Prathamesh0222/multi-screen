@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Rubik } from "next/font/google";
+import { UrlProvider } from "@/context/url-context";
+import { Toaster } from "sonner";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -27,8 +29,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <UrlProvider>{children}</UrlProvider>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { Header } from "@/components/header";
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-hidden flex flex-col">
+    <div className="flex flex-col h-screen">
       <Header />
       <CreateScreen />
       <Footer />
