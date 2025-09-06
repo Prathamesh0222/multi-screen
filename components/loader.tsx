@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState, ReactNode } from "react";
 import Image from "next/image";
 export default function LoaderWrapper({ children }: { children: ReactNode }) {
