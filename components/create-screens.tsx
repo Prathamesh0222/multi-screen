@@ -30,7 +30,7 @@ const PLATFORM_OPTIONS: PlatformProps[] = [
 ];
 
 export const CreateScreen = () => {
-  const [cards, setCards] = useState<number[]>([1, 2, 3, 4]);
+  const [cards, setCards] = useState<number[]>([1, 2]);
   const router = useRouter();
   const { urls, setUrl, platforms, setPlatform, resetAll } = useUrl();
 
@@ -144,11 +144,15 @@ export const CreateScreen = () => {
           ))}
         </div>
         <div className="flex gap-2 justify-end">
+          <Button
+            variant={"outline"}
+            onClick={createCard}
+            className="mt-4 cursor-pointer"
+          >
+            Add Screen
+          </Button>
           <Button onClick={handleCreate} className="mt-4 cursor-pointer">
             Create
-          </Button>
-          <Button onClick={createCard} className="mt-4 cursor-pointer">
-            Add
           </Button>
         </div>
       </div>
