@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 interface UrlContextType {
   urls: Record<number, string>;
@@ -24,12 +30,12 @@ export const UrlProvider = ({ children }: { children: React.ReactNode }) => {
     setPlatforms((prev) => ({ ...prev, [id]: platform }));
   };
 
-  const resetAll = () => {
+  const resetAll = useCallback(() => {
     setUrls({});
     setPlatforms({});
     localStorage.removeItem("urls");
     localStorage.removeItem("platforms");
-  };
+  }, []); // stable function
 
   useEffect(() => {
     const storedUrls = localStorage.getItem("urls");

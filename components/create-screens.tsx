@@ -82,7 +82,7 @@ export const CreateScreen = () => {
 
   useEffect(() => {
     resetAll();
-  }, []);
+  }, [resetAll]);
 
   const gridCols = cards.length > 1 ? "grid-cols-2" : "grid-cols-1";
 
